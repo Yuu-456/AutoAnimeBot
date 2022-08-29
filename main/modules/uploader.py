@@ -13,7 +13,7 @@ from main import app, status
 from pyrogram.errors import FloodWait
 from main.inline import button1
 
-async def upload_video(msg: Message,file,id,tit,name,ttl):
+async def upload_file(msg: Message,file,id,tit,name,ttl):
     try:
     
         fuk = isfile(file)
@@ -25,14 +25,9 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             ep_num = get_epnum(name)
             thumbnail,w,h = await generate_thumbnail(id,file,tit,ep_num,size,format_time(duration))
             tags = tags_generator(tit)
-            buttons = InlineKeyboardMarkup([
-                [
-                    InlineKeyboardButton(text="Info", url="https://t.me/Anime_Dex"),
-                    InlineKeyboardButton(text="Comments", url=f"https://t.me/+4nUo4jBR-JgxMTVl")
-                ]
-            ])
-            caption = f"🎥 **{name}**\n\n{tags}"
-            x = await app.send_video(
+
+            caption = f"| ©️ *@Ongoing_Uploadz* |"
+            x = await app.send_file(
                 UPLOADS_ID,
             file,
             caption=caption,
