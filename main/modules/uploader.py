@@ -13,6 +13,13 @@ from main import app, status
 from pyrogram.errors import FloodWait
 from main.inline import button1
 
+      fuk = @bot.update.send_message("""
+Anime:- {name} 
+━━━━━━━━━━━━━━
+➜ Audio:- Japanese
+➜ Quality:- 720p
+━━━━━━━━━━━━━━ 
+""")
 async def upload_file(msg: Message,file,id,tit,name,ttl):
     try:
     
